@@ -8,6 +8,7 @@ export interface Product {
   id: string;
   img?: string;
   title: string;
+  count?: number
 };
 
 export interface ProductContextProps {
@@ -21,4 +22,13 @@ export interface ProductCardHOCProps {
   Buttons: (Props: ProductButtons) => JSX.Element;
   Image:   (Props: ProductImage) => JSX.Element,
   Title:   (Props: ProductCardTitle) => JSX.Element,
+}
+
+export interface onChangeArgs {
+  count: number;
+  product: Product;
+}
+
+export interface ProductInCart extends Product {
+  count: number;
 }
