@@ -37,13 +37,34 @@ const ShoppingPage = () => {
                 <ProductCard.Title className="text-white text-bold" />
                 <ProductCard.Buttons className="custom-buttons" />
 
-                <button onClick={ reset }>Reset</button>
-                <button onClick={ () => increaseBy(-2) }>-2</button>
+                <button
+                  className='btn btn-primary'
+                  style={{ margin: '20px', marginLeft: '10px' }}
+                  onClick={ reset }
+                >
+                    Reset
+                </button>
+                <button
+                  className='btn btn-success'
+                  onClick={ () => increaseBy(-2) }
+                  style={{ margin: '10px' }}
+                >
+                  -2
+                </button>
                 {
                   !isMaxCountReached &&
-                <button onClick={ () => increaseBy(2) }>+2</button>
+                <button
+                  className='btn btn-success'
+                  style={{ margin: '10px', marginLeft: '10px' }}
+                  onClick={ () => increaseBy(2) }
+                >
+                  +2
+                </button>
                 }
-                <span>{ count } - { maxCount } </span>
+                <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }} >
+                  <div
+                  >{ count } - { maxCount } </div>
+                </div>
               </>
             )
           }
